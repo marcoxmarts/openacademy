@@ -19,7 +19,7 @@ class Session(models.Model):
 
 	name = fields.Char(required=True)
 	start_date = fields.Date(default=fields.Date.today)
-	duration = fields.Float(digits=(6,2), help="Duracion en días")
+	duration = fields.Float(digits=(6,2), help="Duration in days")
 	seats = fields.Integer(string="Number of seats")
 	active = fields.Boolean(default=True)
 	

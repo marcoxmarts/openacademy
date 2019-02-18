@@ -6,11 +6,11 @@ class Course(models.Model):
 	_name = 'openacademy.course'
 	_description = "OpenAcademy Course"
 
-	name = fields.Char(string="Titulo", required = True)
+	name = fields.Char(string="Titulo del curso", required = True)
 	description = fields.Text()
 	
-	responsible_id = fields.Many2one('res.users', ondelete='set null', string="Responsible", index=True)
-	session_ids = fields.One2many('openacademy.session', 'course_id', string="Sessions")
+	responsible_id = fields.Many2one('res.users', ondelete='set null', string="Responsable", index=True)
+	session_ids = fields.One2many('openacademy.session', 'course_id', string="Sessiones")
 
 
 class Session(models.Model):
@@ -19,7 +19,7 @@ class Session(models.Model):
 
 	name = fields.Char(required=True)
 	start_date = fields.Date(default=fields.Date.today)
-	duration = fields.Float(digits=(6,2), help="Duration in days")
+	duration = fields.Float(digits=(6,2), help="Duracion en días")
 	seats = fields.Integer(string="Number of seats")
 	active = fields.Boolean(default=True)
 	
